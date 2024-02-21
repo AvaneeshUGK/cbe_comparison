@@ -61,6 +61,87 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 
 					//
+					// hide taxes
+
+					// Vendor1
+					let tabitems
+					let tabfrag = oTablesHbox.getItems();
+					tabfrag.forEach((frag)=>{
+						tabitems = frag.getItems()[5].getItems();
+						tabitems.forEach((item,index)=>{
+							// if(index == 15 ){
+							// 	item.setVisible(false)
+							// } else 
+							if(index >= 9 && index <=13){
+								item.setVisible(false)
+							}
+						})
+					})
+
+					// Vendor 2
+
+					tabfrag = oTablesHbox1.getItems();
+					tabfrag.forEach((frag)=>{
+						tabitems = frag.getItems()[5].getItems();
+						tabitems.forEach((item,index)=>{
+							// if(index == 15 ){
+							// 	item.setVisible(false)
+							// } else 
+							if(index >= 9 && index <=13){
+								item.setVisible(false)
+							}
+						})
+					})
+
+					// Vendor 3
+
+					tabfrag = oTablesHbox2.getItems();
+					tabfrag.forEach((frag)=>{
+						tabitems = frag.getItems()[5].getItems();
+						tabitems.forEach((item,index)=>{
+							// if(index == 15 ){
+							// 	item.setVisible(false)
+							// } else 
+							if(index >= 9 && index <=13){
+								item.setVisible(false)
+							}
+						})
+					})
+
+					// Vendor 4
+
+					tabfrag = oTablesHbox3.getItems();
+					tabfrag.forEach((frag)=>{
+						tabitems = frag.getItems()[5].getItems();
+						tabitems.forEach((item,index)=>{
+							// if(index == 15 ){
+							// 	item.setVisible(false)
+							// } else 
+							if(index >= 9 && index <=13){
+								item.setVisible(false)
+							}
+						})
+					})
+
+
+					//Vendor 5
+
+					tabfrag = oTablesHbox4.getItems();
+					tabfrag.forEach((frag)=>{
+						tabitems = frag.getItems()[5].getItems();
+						tabitems.forEach((item,index)=>{
+							// if(index == 15 ){
+							// 	item.setVisible(false)
+							// } else 
+							if(index >= 9 && index <=13){
+								item.setVisible(false)
+							}
+						})
+					})
+					
+
+
+					//
 					let oTotalColumn = oTablesHbox.getItems()[2].getItems()[5].getColumns()[2];
 					let oTotalColumn1 = oTablesHbox1.getItems()[1].getItems()[5].getColumns()[2];
 					oTotalColumn1.getParent().getParent().setWidth("200%");

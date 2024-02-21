@@ -73,6 +73,27 @@
               ]
             }
           ]
+        },
+        "tab1_rel": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": 1
+          },
+          "target": "CBE.tab1",
+          "on": [
+            {
+              "ref": [
+                "tab1_rel",
+                "itemno"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "itemno"
+              ]
+            }
+          ]
         }
       }
     },
@@ -274,6 +295,40 @@
         }
       }
     },
+    "CBE.tab1": {
+      "kind": "entity",
+      "elements": {
+        "id": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "itemno": {
+          "type": "cds.Integer"
+        },
+        "SBG": {
+          "type": "cds.String"
+        },
+        "SBU": {
+          "type": "cds.String"
+        },
+        "BUORPurchasing_Group": {
+          "type": "cds.String"
+        },
+        "Plant_Code": {
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "PR_NumberBKTsBKT": {
+          "type": "cds.String"
+        }
+      }
+    },
     "Catalogcbeservice": {
       "@source": "srv/service.cds",
       "kind": "service"
@@ -380,56 +435,37 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "itemno"
-          }
+            "=": "tab1_rel.PAN_Number"
+          },
+          "Label": "PAN_Number"
         },
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "itemname"
-          }
+            "=": "tab1_rel.SBG"
+          },
+          "Label": "SBG"
         },
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "capacity_each"
-          }
+            "=": "tab1_rel.SBU"
+          },
+          "Label": "SBU"
         },
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "dia_mm"
-          }
+            "=": "tab1_rel.BUORPurchasing_Group"
+          },
+          "Label": "BUORPurchasing_Group"
         },
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "tl_to_tl_length"
-          }
-        },
-        {
-          "$Type": "UI.DataField",
-          "Value": {
-            "=": "moc"
-          }
-        },
-        {
-          "$Type": "UI.DataField",
-          "Value": {
-            "=": "design_pressure_bar"
-          }
-        },
-        {
-          "$Type": "UI.DataField",
-          "Value": {
-            "=": "weights"
-          }
-        },
-        {
-          "$Type": "UI.DataField",
-          "Value": {
-            "=": "quantity"
-          }
+            "=": "tab1_rel.Plant_Code"
+          },
+          "Label": "Plant_Code"
         }
       ],
       "projection": {
@@ -499,6 +535,27 @@
             {
               "ref": [
                 "supplier_rel",
+                "itemno"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "itemno"
+              ]
+            }
+          ]
+        },
+        "tab1_rel": {
+          "type": "cds.Composition",
+          "cardinality": {
+            "max": 1
+          },
+          "target": "Catalogcbeservice.tab1",
+          "on": [
+            {
+              "ref": [
+                "tab1_rel",
                 "itemno"
               ]
             },
@@ -624,6 +681,48 @@
         },
         "Per_diem_rate": {
           "@Common.Label": "Per Diem rate for Supervision for Erection and commissioning",
+          "type": "cds.String"
+        }
+      }
+    },
+    "Catalogcbeservice.tab1": {
+      "kind": "entity",
+      "@cds.autoexposed": true,
+      "projection": {
+        "from": {
+          "ref": [
+            "CBE.tab1"
+          ]
+        }
+      },
+      "elements": {
+        "id": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "PAN_Number": {
+          "key": true,
+          "type": "cds.String"
+        },
+        "itemno": {
+          "type": "cds.Integer"
+        },
+        "SBG": {
+          "type": "cds.String"
+        },
+        "SBU": {
+          "type": "cds.String"
+        },
+        "BUORPurchasing_Group": {
+          "type": "cds.String"
+        },
+        "Plant_Code": {
+          "type": "cds.String"
+        },
+        "Project_Description": {
+          "type": "cds.String"
+        },
+        "PR_NumberBKTsBKT": {
           "type": "cds.String"
         }
       }

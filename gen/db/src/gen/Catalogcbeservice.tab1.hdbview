@@ -1,0 +1,11 @@
+VIEW Catalogcbeservice_tab1 AS SELECT
+  tab1_0.id,
+  tab1_0.PAN_Number,
+  tab1_0.itemno,
+  tab1_0.SBG,
+  tab1_0.SBU,
+  tab1_0.BUORPurchasing_Group,
+  tab1_0.Plant_Code,
+  tab1_0.Project_Description,
+  tab1_0.PR_NumberBKTsBKT
+FROM CBE_tab1 AS tab1_0

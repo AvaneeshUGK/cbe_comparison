@@ -165,7 +165,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 										oTotalColumn1.oParent.oParent.oParent.getItems()[0].setVisible(false);
 										oTotalColumn1.oParent.getColumns()[0].setVisible(false);
 										oTotalColumn1.oParent.getColumns()[1].setVisible(false);
-										oTotalColumn1.getParent().getParent().getParent().getParent().getItems()[2].setVisible(true);
+										oTotalColumn1.getParent().getParent().getParent().getParent().getItems()[2].setVisible(false);
 										oHeaderContainer1.setHeight("18px");
 									}
 									
@@ -200,7 +200,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 										oTotalColumn2.oParent.oParent.oParent.getItems()[0].setVisible(false);
 										oTotalColumn2.oParent.getColumns()[0].setVisible(false);
 										oTotalColumn2.oParent.getColumns()[1].setVisible(false);
-										oTotalColumn2.getParent().getParent().getParent().getParent().getItems()[2].setVisible(true);
+										oTotalColumn2.getParent().getParent().getParent().getParent().getItems()[2].setVisible(false);
 										oHeaderContainer2.setHeight("18px");
 									}
 									
@@ -236,7 +236,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 										oTotalColumn3.oParent.oParent.oParent.getItems()[0].setVisible(false);
 										oTotalColumn3.oParent.getColumns()[0].setVisible(false);
 										oTotalColumn3.oParent.getColumns()[1].setVisible(false);
-										oTotalColumn3.getParent().getParent().getParent().getParent().getItems()[2].setVisible(true);
+										oTotalColumn3.getParent().getParent().getParent().getParent().getItems()[2].setVisible(false);
 										oHeaderContainer3.setHeight("18px");
 									}
 									
@@ -272,7 +272,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 										oTotalColumn4.oParent.oParent.oParent.getItems()[0].setVisible(false);
 										oTotalColumn4.oParent.getColumns()[0].setVisible(false);
 										oTotalColumn4.oParent.getColumns()[1].setVisible(false);
-										oTotalColumn4.getParent().getParent().getParent().getParent().getItems()[2].setVisible(true);
+										oTotalColumn4.getParent().getParent().getParent().getParent().getItems()[2].setVisible(false);
 										oHeaderContainer4.setHeight("18px");
 									}
 									

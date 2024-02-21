@@ -13,5 +13,6 @@ COLUMN TABLE CBE_Item (
   quantity NVARCHAR(5000),
   PRIMARY KEY(itemname)
 ) WITH ASSOCIATIONS (
-  MANY TO MANY JOIN CBE_Supplier AS supplier_rel ON (supplier_rel.itemno = itemno)
+  MANY TO MANY JOIN CBE_Supplier AS supplier_rel ON (supplier_rel.itemno = itemno),
+  MANY TO ONE JOIN CBE_tab1 AS tab1_rel ON (tab1_rel.itemno = itemno)
 )

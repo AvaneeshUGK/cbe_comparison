@@ -15,6 +15,7 @@ entity Item {
         quantity            : String  @Common.Label: 'Qty No.';
         supplier_rel        : Association to many Supplier
                                   on supplier_rel.itemno = itemno;
+        tab1_rel : Composition of one tab1 on tab1_rel.itemno = itemno;
 }
 
 //test
@@ -69,4 +70,16 @@ entity Supp_offer {
         total_basic_price_include_tax2 : String @Common.Label: 'Total Basic Price including packing, marking & forwarding, Transportation including Taxes';
         Spares_two_years               : String  @Common.Label: 'Spares for 2 Years operation';
         Per_diem_rate                  : String @Common.Label: 'Per Diem rate for Supervision for Erection and commissioning';
+}
+
+entity tab1{
+key id : String;
+key PAN_Number : String;
+itemno: Integer;
+SBG : String;
+SBU : String;
+BUORPurchasing_Group : String;
+Plant_Code : String;
+Project_Description : String;
+PR_NumberBKTsBKT : String; 
 }

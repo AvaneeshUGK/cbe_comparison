@@ -17,8 +17,10 @@
         </EntitySet>
         <EntitySet Name="Item" EntityType="Catalogcbeservice.Item">
           <NavigationPropertyBinding Path="supplier_rel" Target="supplier"/>
+          <NavigationPropertyBinding Path="tab1_rel" Target="tab1"/>
         </EntitySet>
         <EntitySet Name="Supp_offer" EntityType="Catalogcbeservice.Supp_offer"/>
+        <EntitySet Name="tab1" EntityType="Catalogcbeservice.tab1"/>
       </EntityContainer>
       <EntityType Name="supplier">
         <Key>
@@ -59,6 +61,9 @@
         <Property Name="weights" Type="Edm.String"/>
         <Property Name="quantity" Type="Edm.String"/>
         <NavigationProperty Name="supplier_rel" Type="Collection(Catalogcbeservice.supplier)"/>
+        <NavigationProperty Name="tab1_rel" Type="Catalogcbeservice.tab1">
+          <OnDelete Action="Cascade"/>
+        </NavigationProperty>
       </EntityType>
       <EntityType Name="Supp_offer">
         <Key>
@@ -91,6 +96,21 @@
         <Property Name="total_basic_price_include_tax2" Type="Edm.String"/>
         <Property Name="Spares_two_years" Type="Edm.String"/>
         <Property Name="Per_diem_rate" Type="Edm.String"/>
+      </EntityType>
+      <EntityType Name="tab1">
+        <Key>
+          <PropertyRef Name="id"/>
+          <PropertyRef Name="PAN_Number"/>
+        </Key>
+        <Property Name="id" Type="Edm.String" Nullable="false"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
+        <Property Name="itemno" Type="Edm.Int32"/>
+        <Property Name="SBG" Type="Edm.String"/>
+        <Property Name="SBU" Type="Edm.String"/>
+        <Property Name="BUORPurchasing_Group" Type="Edm.String"/>
+        <Property Name="Plant_Code" Type="Edm.String"/>
+        <Property Name="Project_Description" Type="Edm.String"/>
+        <Property Name="PR_NumberBKTsBKT" Type="Edm.String"/>
       </EntityType>
       <Annotations Target="Catalogcbeservice.supplier/supplier_name">
         <Annotation Term="Common.Label" String="Supplier"/>
@@ -138,31 +158,24 @@
         <Annotation Term="UI.LineItem">
           <Collection>
             <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="itemno"/>
+              <PropertyValue Property="Value" Path="tab1_rel/PAN_Number"/>
+              <PropertyValue Property="Label" String="PAN_Number"/>
             </Record>
             <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="itemname"/>
+              <PropertyValue Property="Value" Path="tab1_rel/SBG"/>
+              <PropertyValue Property="Label" String="SBG"/>
             </Record>
             <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="capacity_each"/>
+              <PropertyValue Property="Value" Path="tab1_rel/SBU"/>
+              <PropertyValue Property="Label" String="SBU"/>
             </Record>
             <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="dia_mm"/>
+              <PropertyValue Property="Value" Path="tab1_rel/BUORPurchasing_Group"/>
+              <PropertyValue Property="Label" String="BUORPurchasing_Group"/>
             </Record>
             <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="tl_to_tl_length"/>
-            </Record>
-            <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="moc"/>
-            </Record>
-            <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="design_pressure_bar"/>
-            </Record>
-            <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="weights"/>
-            </Record>
-            <Record Type="UI.DataField">
-              <PropertyValue Property="Value" Path="quantity"/>
+              <PropertyValue Property="Value" Path="tab1_rel/Plant_Code"/>
+              <PropertyValue Property="Label" String="Plant_Code"/>
             </Record>
           </Collection>
         </Annotation>

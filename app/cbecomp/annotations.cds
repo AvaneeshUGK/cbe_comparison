@@ -4,39 +4,28 @@ annotate service.Item with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Value : itemno,
+            Value : tab1_rel.PAN_Number,
+            Label : 'PAN_Number',
         },
         {
             $Type : 'UI.DataField',
-            Value : itemname,
+            Value : tab1_rel.SBG,
+            Label : 'SBG',
         },
         {
             $Type : 'UI.DataField',
-            Value : capacity_each,
+            Value : tab1_rel.SBU,
+            Label : 'SBU',
         },
         {
             $Type : 'UI.DataField',
-            Value : dia_mm,
+            Value : tab1_rel.BUORPurchasing_Group,
+            Label : 'BUORPurchasing_Group',
         },
         {
             $Type : 'UI.DataField',
-            Value : tl_to_tl_length,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : moc,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : design_pressure_bar,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : weights,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : quantity,
+            Value : tab1_rel.Plant_Code,
+            Label : 'Plant_Code',
         },
     ]
 );
